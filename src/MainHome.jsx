@@ -9,7 +9,7 @@ export default function Mainhome() {
     <h1>*****  MainHome  *****</h1>
       <ButtonGroup variant="contained" aria-label="outlined primary button group">
         <div>
-        <Button><Link to="Index" className="link">Login</Link></Button>
+        <Button><Link to="Index" className="link">Login auth</Link></Button>
         </div>
         </ButtonGroup>
         
