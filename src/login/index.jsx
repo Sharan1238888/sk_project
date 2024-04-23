@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './style.css';
+import Dept from '../Department/Dept.jsx';
 
 export default function Index() {
 
@@ -28,6 +29,8 @@ export default function Index() {
   
 
   return (
+    <>
+    <Dept />
         <div className="container" id="container" >
             <div className="form-container sign-up">
                 <form>
@@ -76,6 +79,7 @@ export default function Index() {
             </div>
         </div>
         </div>
+        </>
     );
 }
 
