@@ -2,12 +2,12 @@ import React from 'react'
 import Dept from './Navbar.jsx';
 import './new.css'
 
-export default function home() {
+export default function Blog() {
   return (
 
     <div>
         <Dept />
-        <h1>------------home-----------</h1>
+        <h1>------------Blog-----------</h1>
         </div>
   )
 }

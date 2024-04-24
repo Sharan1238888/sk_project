@@ -1,8 +1,17 @@
 import React, { useEffect } from 'react';
-import './style.css';
-import Dept from '../Department/Dept.jsx';
+import './log.css';
 
 export default function Index() {
+
+    const containerStyle = {
+        backgroundColor: '#c9d6ff',
+        background: 'linear-gradient(to right, #e2e2e2, #c9d6ff)',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+        alignItems: 'center',
+        justifyContent: 'center'
+    };
 
     useEffect(() => {
         const container = document.getElementById('container');
@@ -29,9 +38,8 @@ export default function Index() {
   
 
   return (
-    <>
-    <Dept />
-        <div className="container" id="container" >
+    <div style={containerStyle}>
+        <div className="container" id="container"  >
             <div className="form-container sign-up">
                 <form>
                 <h1>Create Account</h1>
@@ -79,7 +87,7 @@ export default function Index() {
             </div>
         </div>
         </div>
-        </>
+        </div>
     );
 }
 

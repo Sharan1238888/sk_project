@@ -12,8 +12,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [
+  { name: 'Department', link: '/Department' },
+  { name: 'Blog', link: '/Blog' }
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -44,7 +48,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/Home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -55,7 +59,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            HOME
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -89,7 +93,9 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={page.link} style={{ textDecoration: 'none' }}>
+                  <Typography textAlign="center">{page.name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -99,7 +105,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/Home"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -120,7 +126,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link to={page.link} style={{ textDecoration: 'none' }}>{page.name}</Link>
               </Button>
             ))}
           </Box>
