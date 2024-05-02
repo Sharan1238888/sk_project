@@ -18,6 +18,7 @@ export default function Mainhome() {
         <div>
         <Button><Link to="Index" className="link">Login auth</Link></Button>
         <Button><Link to="Home" className="link">Department page</Link></Button>
+        <Button><Link to="Homepage" className="link">Homepage</Link></Button>
         </div>
         </ButtonGroup>
         

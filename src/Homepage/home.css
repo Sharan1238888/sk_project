@@ -1,0 +1,11 @@
+.bg{
+    margin: 0;
+    padding: 0;
+    height: 646px;
+    background-image: url("./imghome.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
