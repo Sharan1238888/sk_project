@@ -9,11 +9,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import logo from './logobg.png'
 import Avatar from '@mui/material/Avatar';
 
-
 export default function ButtonAppBar() {
+  const app ={
+    background:'rgba(180, 180, 172, 0.363)',
+    boxShadow:'none'
+  }
+
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static"  style={{background:'rgba(245, 232, 192, 0.35)',boxShadow:'none'}}>
+      <AppBar position="static"  style={app}>
         <Toolbar>
           <IconButton
             size="large"

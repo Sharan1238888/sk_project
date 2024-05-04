@@ -7,7 +7,10 @@ import Department from './Department/Department.jsx';
 import Blog from './Department/Blog.jsx';
 import Homepage from './Homepage/home.jsx'
 
-export default function Router() {  return (
+
+
+export default function Router() { 
+     return (
     <div>
         <BrowserRouter>
         <Routes>
@@ -17,6 +20,7 @@ export default function Router() {  return (
             <Route exact path='/Department' element={<Department />}></Route>
             <Route exact path='/Blog' element={<Blog />}></Route>
             <Route exact path='/Homepage' element={<Homepage />}></Route>
+
             </Routes>
         </BrowserRouter>
     </div>
