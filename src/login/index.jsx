@@ -39,7 +39,7 @@ export default function Index() {
 
   return (
     <div style={containerStyle}>
-        <div className="container" id="container"  >
+        <div className="container1" id="container"  >
             <div className="form-container sign-up">
                 <form>
                 <h1>Create Account</h1>

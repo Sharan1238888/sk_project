@@ -8,12 +8,22 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from './logobg.png'
 import Avatar from '@mui/material/Avatar';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function ButtonAppBar() {
   const app ={
     background:'rgba(180, 180, 172, 0.363)',
     boxShadow:'none'
   }
+
+
+  let navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('loggedIn');
+    navigate("/Login");
+    // setLoggedIn(false);
+  };
 
 
   return (
@@ -36,8 +46,8 @@ export default function ButtonAppBar() {
           <Avatar src={logo} sx={{ width: 250, height: 90  }}  />
           </Typography>
 
-          <Button><Typography variant="h6" component="div" sx={{ flexGrow: 1 }} color="black">
-         Login</Typography></Button>
+          <Button onClick={handleLogout} ><Typography variant="h6" component="div" sx={{ flexGrow: 1 }} color="black">
+         Logout</Typography></Button>
         </Toolbar>
       </AppBar>
     </Box>
