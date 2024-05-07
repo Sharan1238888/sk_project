@@ -55,17 +55,12 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
-  // let initvalue;
-
-  // initvalue = JSON.parse(localStorage.getItem("loggedIn"))
-
   let navigate = useNavigate()
 
   const handleLogin = () => {
-    if (username === '1' && password === '1') {
+    if (username === 'sharan' && password === '123') {
       localStorage.setItem('loggedIn', 'true');
       setLoggedIn(true);
-      // navigate("/Homepage")
     }
   };
 

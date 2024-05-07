@@ -21,10 +21,10 @@ export default function Mainhome() {
     
       <ButtonGroup variant="contained" aria-label="outlined primary button group">
         <div>
-        <Button><Link to="Index" className="link">Login auth</Link></Button>
-        <Button><Link to="Home" className="link">Department page</Link></Button>
-        <Button><Link to="Homepage" className="link">Homepage</Link></Button>
-        <Button><Link to="Login" className="link">Login test</Link></Button>
+        <Button><Link to="Index" className="link-light">Login auth</Link></Button>
+        <Button><Link to="Home" className="link-light">Department page</Link></Button>
+        <Button><Link to="Homepage" className="link-light">Homepage</Link></Button>
+        <Button><Link to="Login" className="link-light">Login test</Link></Button>
       
         
         </div>

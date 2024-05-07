@@ -22,7 +22,6 @@ export default function ButtonAppBar() {
   const handleLogout = () => {
     localStorage.removeItem('loggedIn');
     navigate("/Login");
-    // setLoggedIn(false);
   };
 
 
