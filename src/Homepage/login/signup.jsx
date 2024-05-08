@@ -57,32 +57,66 @@ let navigate = useNavigate()
     // console.log(email);
 
 // onSubmit
-    const onSubmit = async () => {
-        let emp_id = 100;
-        if(value.length === 0){
-          emp_id = 101;
-        }
-        else{
-          emp_id = value[value.length - 1].emp_id + 1
-        }
-  
-        const details ={
-          emp_id:emp_id,
-          name:name,
-          lname:lname,
-          pass:pass,
-          email:email
-        }
-        setValue([...value,details])
-        await localStorage.setItem("Employee", JSON.stringify(value))
-        navigate("/Homepage")
-      }
+    
+       
   
       useEffect(() => {
       localStorage.setItem("Employee", JSON.stringify(value))
       },[value])
   
 
+      const onSubmit = async (e) => {
+        e.preventDefault();
+    
+        // Retrieve users from local storage
+        const users = JSON.parse(localStorage.getItem('Employee'));
+    
+        // Check if the entered credentials match any user in local storage
+
+        let found = false;
+        let found2 = false;
+        if(email === "" | pass === "")
+        {
+          found2 = true;
+          alert('Fill the fild');
+
+        }
+
+        if(!found2){
+        for (const user in users) {
+          if (users[user].email === email) {
+            found = true;
+            alert('Username already exits!');
+            break;
+          }
+        }
+    
+        if (!found) {
+          let emp_id = 100;
+          if(value.length === 0){
+            emp_id = 101;
+          }
+          else{
+            emp_id = value[value.length - 1].emp_id + 1
+          }
+    
+          const details ={
+            emp_id:emp_id,
+            name:name,
+            lname:lname,
+            pass:pass,
+            email:email
+          }
+          setValue([...value,details])
+          await localStorage.setItem("Employee", JSON.stringify(value))
+          navigate("/Login")
+
+          alert('User registered Successfuly');
+        }
+
+          
+        }
+      };
 
 
   return (

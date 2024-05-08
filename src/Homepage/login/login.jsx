@@ -32,14 +32,14 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
 
   const [display, setDisplay] = useState([]);
@@ -49,6 +49,8 @@ export default function SignIn() {
     setLoggedIn(JSON.parse(localStorage.getItem("loggedIn")))
   }, [])
   console.log(display)
+  
+  localStorage.setItem('Employee', JSON.stringify([{ email: 'sharan', pass: '123' }]));
 
 
   const [username, setUsername] = useState('');
@@ -57,12 +59,36 @@ export default function SignIn() {
 
   let navigate = useNavigate()
 
-  const handleLogin = () => {
-    if (username === 'sharan' && password === '123') {
-      localStorage.setItem('loggedIn', 'true');
-      setLoggedIn(true);
+  // const handleLogin1 = () => {
+  //   if (username === 'sharan' && password === '123') {
+  //     localStorage.setItem('loggedIn', 'true');
+  //     setLoggedIn(true);
+  //   }
+  // };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Retrieve users from local storage
+    const users = JSON.parse(localStorage.getItem('Employee'));
+
+    // Check if the entered credentials match any user in local storage
+    let found = false;
+    for (const user in users) {
+      if (users[user].email === username && users[user].pass === password) {
+        localStorage.setItem('loggedIn', 'true');
+        setLoggedIn(true);
+        found = true;
+        alert('Login successful!');
+        break;
+      }
+    }
+
+    if (!found) {
+      alert('Invalid username or password. Please try again.');
     }
   };
+
 
   const handleLogout = () => {
     localStorage.removeItem('loggedIn');
@@ -103,7 +129,7 @@ export default function SignIn() {
           User: sharan || password: 123
           </Typography>
           
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleLogin} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -135,7 +161,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={handleLogin}
+              // onClick={handleLogin}
             >
               Sign In
             </Button>
