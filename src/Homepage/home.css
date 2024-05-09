@@ -1,3 +1,15 @@
+*{
+    box-sizing: border-box;  
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #000;
+    overflow-x: hidden;
+}
+
 .bg{
     margin: 0;
     padding: 0;
@@ -7,6 +19,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 
 }
 
@@ -15,4 +30,43 @@
     position: relative;
     top: 100px;
     color: rgba(255, 255, 255, 0.986);
+}
+
+.section-padding{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.h3{
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+.section-header {
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+    background: url("./seprator.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: inline-block;
+    width: 100%;
+    unicode-bidi: isolate;
+    font-size: 15px;
+    color: #000;
+}
+
+.container-fluid{
+    margin-right: auto;
+    margin-left: auto;
+}
+.no-padding{
+    padding: 0;
+}
+.choose-us{
+    background-color: #f8f8f8;
 }
