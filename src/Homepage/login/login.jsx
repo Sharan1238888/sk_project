@@ -50,7 +50,7 @@ export default function SignIn() {
   }, [])
   console.log(display)
   
-  localStorage.setItem('Employee', JSON.stringify([{ email: 'sharan', pass: '123' }]));
+  // localStorage.setItem('Employee', JSON.stringify([{ email: 'sharan', pass: '123' }]));
 
 
   const [username, setUsername] = useState('');
@@ -90,10 +90,10 @@ export default function SignIn() {
   };
 
 
-  const handleLogout = () => {
-    localStorage.removeItem('loggedIn');
-    setLoggedIn(false);
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('loggedIn');
+  //   setLoggedIn(false);
+  // };
 
 
   return (
@@ -102,8 +102,8 @@ export default function SignIn() {
 
     {loggedIn ? (
       <div>
-        <h2>Welcome, {"username"}!</h2>
-        <button onClick={handleLogout}>Logout</button>
+        {/* <h2>Welcome, {"username"}!</h2> */}
+        {/* <button onClick={handleLogout}>Logout</button> */}
         {navigate("/Homepage")}
       </div>
     ) : (
@@ -125,9 +125,9 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Typography noWrap flexWrap={'nowrap'}>
+          {/* <Typography noWrap flexWrap={'nowrap'}>
           User: sharan || password: 123
-          </Typography>
+          </Typography> */}
           
           <Box component="form" onSubmit={handleLogin} noValidate sx={{ mt: 1 }}>
             <TextField
