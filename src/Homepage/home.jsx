@@ -4,6 +4,7 @@ import './home.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Items from './Items'
 
 export default function Home() {
 
@@ -30,11 +31,12 @@ export default function Home() {
 
             </div>
           </div>
-          <div class="container-fluid no-padding choose-us">
-          <div class="section-padding"></div>
+          <div className="container-fluid no-padding choose-us">
+          <div className="section-padding"></div>
           <div className='section-header'>
-            <h3 className='h3'>REASONS TO CHOOSE US</h3>
+            <h3 className='h3'>REASONS TO CHOOSE US</h3> 
           </div>
+          <div> <Items /></div>
           </div>
 
 
