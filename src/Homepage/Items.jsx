@@ -6,9 +6,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import img from './taxi.jpg';
-import {Row} from 'react-bootstrap';
 import { useState ,useEffect } from 'react';
 import Itemsdata from './Itemsdata.json';
+import Grid from '@mui/material/Grid';
 
 export default function MediaCard() {
 
@@ -19,9 +19,11 @@ export default function MediaCard() {
       }, []);
     console.log(display);
   return (
-
-    <Row md={2} xs={3} lg={3} className='g-3'>
+<>
+<Grid container spacing={8}>
         {display.map((i) => (
+          <Grid item xs={3} md={2.5} lg={4}>
+          {/* <Grid item xs={3} > */}
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 200 }}
@@ -41,7 +43,9 @@ export default function MediaCard() {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
+    </Grid>
      ))}
-    </Row>
+     </Grid>
+   </>
   );
 }
